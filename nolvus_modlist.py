@@ -105,7 +105,8 @@ for line in modlist_lines:
             file_id = mod_data[mod_name]['file_id']
             if mod_id and mod_id != "0":
                 game_nexus = 'skyrimspecialedition' if game == 'SkyrimSE' else 'fallout4'
-                html_content += f'        <li class="list-group-item">{prefix} <a href="https://www.nexusmods.com/{game_nexus}/mods/{mod_id}">{escape(mod_name)}</a> {file_id}</li>\n'
+                # html_content += f'        <li class="list-group-item">{prefix} <a href="https://www.nexusmods.com/{game_nexus}/mods/{mod_id}">{escape(mod_name)}</a> {file_id}</li>\n'
+                html_content += f'        <li class="list-group-item">{prefix} <a href="https://www.nexusmods.com/{game_nexus}/mods/{mod_id}">{escape(mod_name)}</a></li>\n'
                 logger.info(f"Linked mod: {mod_name}, ModID={mod_id}, FileID={file_id}")
             else:
                 html_content += f'        <li class="list-group-item"><i>{prefix} {escape(mod_name)}</i></li>\n'
@@ -133,3 +134,4 @@ except Exception as e:
 # Log completion
 
 logger.info(f"Generated HTML for {modlist} with {len(modlist_lines)} entries")
+

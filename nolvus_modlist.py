@@ -7,16 +7,16 @@ import re
 import configparser
 
 # Input parameters
-drive = 'F'
+drive = 'D'
 game = 'SkyrimSE'
 version = '6.0.20'
 modlist = 'Nolvus Awakening'
 profile = 'Nolvus Awakening'
-output_dir = f'{drive}:/Wabbajack/Modlists/status/wj'
+output_dir = f'{drive}:/Modlists'
 
 # Set up logging
 current_date = datetime.now().strftime('%y%m%d')
-log_file = f'{drive}:/Wabbajack/Modlists/status/modlist_to_html_nolvus_{current_date}.log'
+log_file = f'{drive}:/Modlists/modlist_to_html_nolvus_{current_date}.log'
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -131,4 +131,5 @@ except Exception as e:
     exit(1)
 
 # Log completion
+
 logger.info(f"Generated HTML for {modlist} with {len(modlist_lines)} entries")
